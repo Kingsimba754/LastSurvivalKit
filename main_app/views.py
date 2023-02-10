@@ -15,7 +15,9 @@ def people_index(request):
 
 def people_detail(request,person_id):
     person = Person.objects.get(id= person_id)
-    return render(request,'people/detail.html',{'person':person})
+    unarmed = Weapon.objects.exclude(id_in = person.weapons.all())
+    return render(request,'people/detail.html',{'person':person,
+    'wepaons': unarmed})
 
 class PersonCreate(CreateView):
     model = Person

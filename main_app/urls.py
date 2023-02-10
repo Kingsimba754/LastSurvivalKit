@@ -10,4 +10,5 @@ urlpatterns =[
     path('people/create/',views.PersonCreate.as_view(), name='people_create'),
     path('people/<int:pk>/update/', views.PersonUpdate.as_view(),name='people_update'),
     path('people/<int:pk>/delete/', views.PersonDelete.as_view(),name='people_delete'),
+    path('people/<int:person_id>/assoc_weapons/<int:weapon_id>/', views.assoc_toy, name='assoc_weapon'),
 ]
