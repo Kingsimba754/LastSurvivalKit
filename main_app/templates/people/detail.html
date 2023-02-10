@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Person's Detail</h1>
+
+<div class="card">
+    <div class="card-content">
+        <span class="card-title">{{person.name}}</span>
+        <p>type:{{person.type}}</p>
+        <p>Description:{{person.description}}</p>
+        {%if person.age > 0 %}
+        <p>Age:{{person.age}}</p>
+        {%else%}
+        <p>Age:Unknown</p>
+        {%endif%}
+    </div>
+    <div class="card-action">
+        <a href="{%url 'people_update' person.id%}">Edit</a>
+        <a href="{%url 'people_delete' person.id%}">Delete</a>
+    </div>
+</div>
+
+{%endblock%}
