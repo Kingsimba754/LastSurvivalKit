@@ -16,12 +16,14 @@
           <div class="nav-wrapper">
             <ul>
               <li>
-                <a href="/" class="left brand-logo">&nbsp;&nbsp;The Last Survival Journal</a>
+                <a href="/" class="left brand-logo">&nbsp;&nbsp;The Last Survival Journal!</a>
               </li>
             </ul>
             <ul class="right">
             <li><a href="{%url 'index' %}">People</a></li>
             <li><a href="{% url 'people_create' %}">Add a Person to your Log!</a></li>
+            <li><a href="{%url 'weapons_create' %}">Add Weapons</a></li>
+            <li><a href="{% url 'weapons_index' %}"> View Weapons</a></li>
             <li><a href="{%url 'about' %}">About</a></li>
             </ul>
           </div>
