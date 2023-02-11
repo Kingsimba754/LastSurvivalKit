@@ -40,8 +40,8 @@ class Photo(models.Model):
     url = models.CharField(max_length=200)
     person = models.ForeignKey(Person, on_delete= models.CASCADE)
 
-    # def __str__(self):
-    #     return f"Photo for person: {self.person.name} {@self.url}"
+    def __str__(self):
+        return f"Photo for person: {self.person.name} @{self.url}"
 
 
-    ## Left off added your second model which is a One to one relationship
+    # Left off added your second model which is a One to one relationship

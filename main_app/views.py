@@ -20,7 +20,7 @@ def people_index(request):
 
 def people_detail(request,person_id):
     person = Person.objects.get(id= person_id)
-    unarmed = Weapon.objects.exclude(id__in= person.weapons.all())
+    unarmed = Weapon.objects.exclude(id__in= person.weapons.all().values_list('id'))
     return render(request,'people/detail.html',{'person':person,
     'wepaons': unarmed})
 
@@ -57,7 +57,7 @@ class PersonUpdate(UpdateView):
 
 class PersonDelete(DeleteView):
     model = Person
-    success_url = '/people/'
+    success_url = '/People/'
 
 class WeaponIndex(ListView):
     model = Weapon

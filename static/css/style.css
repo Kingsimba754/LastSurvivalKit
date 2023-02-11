@@ -3,6 +3,9 @@ body {
     min-height: 100vh;
     flex-direction: column;
   }
+nav{
+  background-color: green;
+}
   
   main {
     flex: 1 0 auto;
@@ -12,3 +15,8 @@ body {
     padding-top: 0;
     text-align: right;
   }
+
+.page-footer{
+  background-color: green;
+}
+ 
