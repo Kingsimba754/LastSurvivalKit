@@ -1,0 +1,1 @@
+web: gunicorn LastSurvivalKit.wsgi.application
