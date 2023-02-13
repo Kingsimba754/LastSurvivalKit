@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-vpf@3a-2*%n11d246*ryy!f1q7z79a2e%30b$gml$yttvhq02u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['lastsurvivalkit.herokuapp.com']
 
 
 # Application definition
