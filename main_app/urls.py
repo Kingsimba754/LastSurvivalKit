@@ -20,7 +20,7 @@ urlpatterns =[
     path('weapons/<int:pk>/', views.WeaponDetail.as_view(), name='weapons_detail'),
     path('weapons/<int:pk>/update/', views.WeaponUpdate.as_view(), name='weapons_update'),
     path('weapons/<int:pk>/delete/', views.WeaponDelete.as_view(), name='weapons_delete'),
-    path('accounts/signup/',views.signup, name='signup'),
+    path('signup/',views.signup, name='signup'),
     
 
 ]
