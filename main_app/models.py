@@ -13,11 +13,12 @@ class Weapon(models.Model):
         return reverse('weapons_detail', kwargs={'pk': self.id})
 
 class Person(models.Model):
-    name = models.CharField(max_length=50, default="Unknown")
-    type = models.CharField(max_length=50, default='Unknown')
-    description = models.TextField(max_length=250, default= 'None provided')
+    name = models.CharField(max_length=50, default='name?')
+    type = models.CharField(max_length=50, default='Friend or Foe?')
+    description = models.TextField(max_length=250, default= 'What do you know about them?')
     age = models.IntegerField(null = True)
     weapons = models.ManyToManyField(Weapon)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 def __str__(self):
     return self.name

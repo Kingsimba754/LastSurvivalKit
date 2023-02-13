@@ -19,4 +19,9 @@ nav{
 .page-footer{
   background-color: green;
 }
+
+.images{
+  max-width:500px;
+  max-height:500px;
+}
  

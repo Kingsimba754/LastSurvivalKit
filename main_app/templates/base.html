@@ -21,11 +21,17 @@
               </li>
             </ul>
             <ul class="right">
+            <li><a href="{%url 'about' %}">About</a></li>
+              {% if user.is_authenticated %}
             <li><a href="{%url 'index' %}">People</a></li>
             <li><a href="{% url 'people_create' %}">Add a Person to your Log!</a></li>
             <li><a href="{%url 'weapons_create' %}">Add Weapons</a></li>
             <li><a href="{% url 'weapons_index' %}"> View Weapons</a></li>
-            <li><a href="{%url 'about' %}">About</a></li>
+            <li><a href="{% url 'logout'%}">Logout</a></li>
+            {%else%}
+            <li><a href="{% url 'login'%}">Login</a></li>
+            <li><a href="{% url 'signup'%}">Sign Up</a></li>
+            {% endif %}
             </ul>
           </div>
         </nav>

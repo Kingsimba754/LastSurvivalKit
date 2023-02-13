@@ -16,7 +16,7 @@
         </div>
       </div>
       {%for photo in person.photo_set.all%}
-      <img src="{{photo.url}}" alt="{{person.name}}" />
+      <img class ="images"src="{{photo.url}}" alt="{{person.name}}" />
       {%empty%}
       <div class="card-panel teal-text center-align">No Photos</div>
       {% endfor %}
@@ -29,7 +29,7 @@
       >
         {%csrf_token%}
         <input type="file" name="photo-file" />
-        <input type="submit" value="Upload Photo" class="btn darkgreen" />
+        <input type="submit" value="Upload Photo" class="btn green" />
       </form>
     </div>
     <hr />
@@ -49,7 +49,7 @@
         {% endif %}
       </div>
       <div class="col s6">
-        <h3>Known Weapons</h3>
+        <h3>Are they armed?</h3>
         {% if weapons.count %} {%for weapon in weapons%}
         <div class="card">
           <div class="card-content">
