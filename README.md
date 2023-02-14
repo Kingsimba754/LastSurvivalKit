@@ -8,3 +8,10 @@ As you travel through the world of the Last of us you might encounter a lot of d
 - CSS3
 - HTML
 - Django
+- Heroku
+- Github
+- VS Code
+
+# Getting Started
+
+## Check it out here : https://lastsurvivalkit.herokuapp.com/
