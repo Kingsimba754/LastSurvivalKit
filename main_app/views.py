@@ -54,20 +54,21 @@ def assoc_weapon(request, person_id,weapon_id):
     return redirect('detail',weapon_id=weapon_id)
 
 def signup(request):
+    error_message = ''
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
             login(request,user)
             return redirect('index')
-        else:
-            error_message = 'invalid credentials'
-        
-        form = UserCreationForm()
-        return render(request, 'registration/signup.html', {
+    else:
+        error_message = 'invalid credentials'
+    form = UserCreationForm()
+    return render(request, 'registration/signup.html', {
             'form': form,
             'error': error_message
         })
+
 def logout_view(request):
     logout(request)
     return redirect('/')
@@ -76,6 +77,10 @@ class PersonCreate(LoginRequiredMixin,CreateView):
     model = Person
     fields = ['name','type', 'description','age']
     success_url = '/people/'
+
+    def form_valid(self,form):
+        form.instance.user =self.request.user
+        return super().form_valid(form)
 
 class PersonUpdate(LoginRequiredMixin,UpdateView):
     model = Person
